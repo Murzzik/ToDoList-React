@@ -1,0 +1,73 @@
+.App {
+    display: flex;
+    padding: 30px;
+    font-weight: 700;
+    color: #105652;
+}
+
+.App > div {
+    margin-right: 50px;
+}
+
+button {
+    margin: 0 0 3px 5px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #F5EEDC;
+    background: #B91646;
+    font-family: 'Raleway', sans-serif;
+    padding: 2px 5px 2px 5px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+button:hover {
+    cursor: pointer;
+    color: #000;
+    transform: scale(1.1);
+    background: #C0D8C0;
+}
+
+input {
+    background: #105652;
+    font-weight: 700;
+    color: #FBF3E4;
+}
+
+.completed-task {
+    opacity: 0.5;
+}
+
+.task {
+    font-weight: 700;
+}
+
+.filter-header {
+    min-width: 55px;
+    text-align: center;
+    display: inline-block;
+    margin-left: 10px;
+    color: #FBF3E4;
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid #105652;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    background: #105652;
+}
+
+.button-active {
+    background: #105652;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.errorMsg {
+    color: #B91646;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.error {
+    background: #B91646;
+}
