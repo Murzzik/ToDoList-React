@@ -1,10 +1,9 @@
 import React from 'react';
 import TodoListHeader from "./TodoListHeader";
 import TasksList from "./TaskList";
-import AddTaskForm from "./AddTaskForm";
 import ControlButtons from "./ControlButtons";
 import {FilterValuesType} from "./App";
-
+import AddItemForm from "./AddItemForm";
 
 type TodoListPropsType = {
     id: string
@@ -15,6 +14,9 @@ type TodoListPropsType = {
     changeFilter: (filter: FilterValuesType, todolistId: string) => void
     addTask: (taskID: string, todoListID: string) => void
     changeTaskStatus: (taskID: string, isDone: boolean, todoListID: string) => void
+    removeTodoList: (todoListID: string) => void
+    changeTaskTitle: (taskID: string, title: string, todoListID: string) => void
+    changeToDoListTitle: (todoListID: string, title: string) => void
 }
 
 export type TaskType = {
@@ -24,9 +26,6 @@ export type TaskType = {
 }
 
 const TodoList = (props: TodoListPropsType) => {
-    const addTask = (title: string) => {
-        props.addTask(title, props.id)
-    }
     const removeTask = (taskID: string) => {
         props.removeTask(taskID, props.id)
     }
@@ -36,13 +35,24 @@ const TodoList = (props: TodoListPropsType) => {
     const changeTaskStatus = (taskID: string, isDone: boolean) => {
         props.changeTaskStatus(taskID, isDone, props.id)
     }
+    const removeTodoList = () => {
+        props.removeTodoList(props.id)
+    }
+    const addTaskToTodoList = (trimmedTitle: string) => props.addTask(trimmedTitle, props.id)
+
+    const changeTaskTitle = (taskID: string, title: string) => {
+        props.changeTaskTitle(taskID, title, props.id)
+    }
+    const changeToDoListTitle = (title: string) => {
+        props.changeToDoListTitle(props.id, title)
+    }
 
     return (
-        <div>
-            <TodoListHeader title={props.title} addTask={props.addTask} filter={props.filter}/>
-            <AddTaskForm addTask={addTask}/>
+        <div className='toDoLists'>
+            <TodoListHeader title={props.title} addTask={props.addTask} filter={props.filter} removeTodoList={removeTodoList} changeToDoListTitle={changeToDoListTitle}/>
+            <AddItemForm addItem={addTaskToTodoList}/>
             <TasksList task={props.task} removeTask={removeTask} changeFilter={changeFilter}
-                       filter={props.filter} changeTaskStatus={changeTaskStatus}/>
+                       filter={props.filter} changeTaskStatus={changeTaskStatus} changeTaskTitle={changeTaskTitle}/>
             <ControlButtons changeFilter={changeFilter} filter={props.filter}/>
         </div>
     );
