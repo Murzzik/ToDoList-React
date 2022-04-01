@@ -20,7 +20,7 @@ const TasksList = (props: TasksListPropsType) => {
                   changeTaskStatus={props.changeTaskStatus} changeTaskTitle={props.changeTaskTitle}
             />
         )
-    }) // nema
+    })
 
     return (tasksComponentsList.length ?
             <>{tasksComponentsList}</>

@@ -1,6 +1,9 @@
 import React from 'react';
 import {FilterValuesType} from "./App";
+import './App.css'
 import EditableSpan from "./EditableSpan";
+import {IconButton} from "@material-ui/core";
+import {Delete} from "@material-ui/icons";
 
 type TodoListHeaderPropsType = {
     title: string
@@ -12,9 +15,11 @@ type TodoListHeaderPropsType = {
 
 const TodoListHeader = (props: TodoListHeaderPropsType) => {
     return (
-        <h3>
+        <h3 className='headerTitle'>
             <EditableSpan title={props.title} changeTitle={props.changeToDoListTitle}/>
-            <button onClick={props.removeTodoList}>x</button>
+            <IconButton aria-label="delete" onClick={props.removeTodoList}>
+                <Delete/>
+            </IconButton>
         </h3>
     )
 };

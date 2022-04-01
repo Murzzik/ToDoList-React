@@ -1,5 +1,6 @@
 import React from 'react';
 import {FilterValuesType} from "./App";
+import {Button, ButtonGroup} from "@material-ui/core";
 
 type ControlButtonsType = {
     filter: FilterValuesType
@@ -12,15 +13,19 @@ const ControlButtons = (props: ControlButtonsType) => {
     }
 
     return (
-        <div>
-            <button className={props.filter === 'all' ? 'button-active' : ''} onClick={onClickFilter("all")}>All
-            </button>
-            <button className={props.filter === 'active' ? 'button-active' : ''}
+        <div className='btnsGroup'>
+                <Button
+                    color={props.filter === 'all' ? 'secondary' : 'primary'}
+                    onClick={onClickFilter("all")}>All
+                </Button>
+                <Button
+                    color={props.filter === 'active' ? 'secondary' : 'primary'}
                     onClick={onClickFilter("active")}>Active
-            </button>
-            <button className={props.filter === 'completed' ? 'button-active' : ''}
+                </Button>
+                <Button
+                    color={props.filter === 'completed' ? 'secondary' : 'primary'}
                     onClick={onClickFilter("completed")}>Completed
-            </button>
+                </Button>
         </div>
     );
 };

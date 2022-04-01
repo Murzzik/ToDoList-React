@@ -3,11 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {createTheme, CssBaseline, MuiThemeProvider} from "@material-ui/core";
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#ff6e40',
+        },
+        secondary: {
+            main: '#ff8a65',
+        },
+        type: 'dark',
+    },
+});
+
 
 ReactDOM.render(
-    <div>
+    <MuiThemeProvider theme={theme}>
+        <CssBaseline/>
         <App/>
-    </div>
+    </MuiThemeProvider>
 
 
     , document.getElementById('root'));

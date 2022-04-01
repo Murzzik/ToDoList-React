@@ -1,106 +1,31 @@
-.App {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 30px;
-    font-weight: 700;
-    color: #105652;
-}
-
-.toDoLists {
-    margin-right: 30px;
-}
-
-button {
-    margin: 0 0 3px 5px;
-    font-size: 14px;
-    font-weight: 700;
-    color: #F5EEDC;
-    background: #B91646;
-    font-family: 'Raleway', sans-serif;
-    padding: 2px 5px 2px 5px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    transition: .3s;
-}
-
-button:hover {
-    cursor: pointer;
-    color: #000;
-    transform: scale(1.1);
-    background: #C0D8C0;
-}
-
-.deleteTaskBtn {
-    margin: 0 auto;
-    border: none;
-    background: #DFD8CA;
-    color: #B91646;
-}
-
-.deleteTaskBtn > img {
-    width: 20px;
-}
-
-.deleteTaskBtn:hover {
-    background: none;
-    transform: scale(1.05);
-}
-
-input {
-    background: #DFD8CA;
-    font-weight: 700;
-    color: #B91646;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid black;
-}
-
-.taskCheck {
+.taskDisable {
     opacity: 0.5;
 }
-
-.task {
-    font-weight: 700;
+.toDoLists {
+    width: fit-content;
 }
-
 .tasksDiv {
-    display: inline;
+    display: flex;
+    justify-content: space-between;
 }
 
-.filter-header {
-    min-width: 55px;
-    text-align: center;
-    display: inline-block;
-    margin-left: 10px;
-    color: #FBF3E4;
-    font-size: 20px;
+.btnsGroup {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btnsGroup button {
+    min-width: 79px;
+}
+
+.addItem {
+    padding: 20px 0;
+}
+
+.paperBlock {
     padding: 10px;
-    border: 1px solid #105652;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    background: #105652;
 }
 
-.button-active {
-    background: #105652;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.errorMsg {
-    color: #B91646;
-    font-weight: 700;
-    font-size: 20px;
-}
-
-.error {
-    border: none;
-    background: #B91646;
-}
-
-@media screen {
-    @media (max-width: 490px) {
-        .App {
-            flex-wrap: wrap;
-        }
-    }
+.headerTitle {
+    text-align: center;
 }
